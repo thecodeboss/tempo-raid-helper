@@ -12,7 +12,7 @@ export const RosterCard = ({ roster, setRoster }: RosterCardProps) => {
   const [newRaider, setNewRaider] = useState("");
 
   const handleNewRaiderChange = useCallback(
-    (event) => {
+    (event: React.ChangeEvent<HTMLInputElement>) => {
       setNewRaider(event.target.value);
       if (roster.includes(event.target.value)) {
         setError("They're already on the roster!");
@@ -24,7 +24,7 @@ export const RosterCard = ({ roster, setRoster }: RosterCardProps) => {
   );
 
   const handleAdd = useCallback(
-    (event) => {
+    (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
       if (roster.includes(newRaider)) {
         setError("They're already on the roster!");
@@ -37,8 +37,9 @@ export const RosterCard = ({ roster, setRoster }: RosterCardProps) => {
   );
 
   const handleDelete = useCallback(
-    (event) => {
-      const member: string = event.target.dataset.member;
+    (event: React.MouseEvent<HTMLButtonElement>) => {
+      const member = event.currentTarget.dataset.member;
+      if (!member) return;
       setRoster([...pull(roster, member)]);
       if (newRaider === member) {
         setError("");

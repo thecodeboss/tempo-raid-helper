@@ -27,7 +27,7 @@ export const EventCard = ({ roster, setRoster }: EventCardProps) => {
   }, [eventId, setEvent, setLoading]);
 
   const handleEventIdChange = useCallback(
-    async (event) => {
+    async (event: React.ChangeEvent<HTMLInputElement>) => {
       setEventId(event.target.value);
     },
     [setEventId]
@@ -38,15 +38,15 @@ export const EventCard = ({ roster, setRoster }: EventCardProps) => {
     [event]
   );
 
-  const notSignedUp = useMemo(() => difference(roster, signups), [
-    signups,
-    roster
-  ]);
+  const notSignedUp = useMemo(
+    () => difference(roster, signups),
+    [signups, roster]
+  );
 
-  const notInRoster = useMemo(() => difference(signups, roster), [
-    signups,
-    roster
-  ]);
+  const notInRoster = useMemo(
+    () => difference(signups, roster),
+    [signups, roster]
+  );
 
   const addAllToRoster = useCallback(() => {
     setRoster(sort([...roster, ...notInRoster]));
