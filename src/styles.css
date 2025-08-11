@@ -1,0 +1,80 @@
+body {
+  background-color: #222;
+  font-family: sans-serif;
+}
+
+footer {
+  color: #bbb;
+  font-size: 14px;
+  margin-top: 16px;
+  text-align: center;
+}
+
+.App {
+  background-color: #555;
+  border-radius: 4px;
+  margin: 0 auto;
+  width: 800px;
+  padding: 16px;
+  box-shadow: 5px 6px 16px 1px rgba(0, 0, 0, 0.59);
+  -webkit-box-shadow: 5px 6px 16px 1px rgba(0, 0, 0, 0.59);
+  -moz-box-shadow: 5px 6px 16px 1px rgba(0, 0, 0, 0.59);
+}
+
+.App h1 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.block {
+  display: block;
+}
+
+.card {
+  background-color: #ccc;
+  border-radius: 4px;
+  padding: 8px;
+  width: 220px;
+}
+
+.card.event-card {
+  width: 532px;
+}
+
+.card.roster-card {
+  max-height: 500px;
+  overflow-y: scroll;
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.mt {
+  margin-top: 12px;
+}
+
+input {
+  margin: 2px 0;
+  width: 120px;
+}
+
+input.event-id {
+  width: 180px;
+}
+
+span {
+  display: block;
+}
+
+.error {
+  color: red;
+  display: block;
+}
